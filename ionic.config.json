@@ -1,0 +1,7 @@
+{
+  "name": "spotlight",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

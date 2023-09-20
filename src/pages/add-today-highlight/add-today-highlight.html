@@ -1,0 +1,55 @@
+<!-- <ion-header> -->
+<!-- 
+  <ion-navbar>
+    <ion-title>Add Today's Highlights!</ion-title>
+  </ion-navbar> -->
+
+<!-- </ion-header> -->
+
+
+<ion-content class="bck" padding>
+  
+      <div no-lines class="status">
+      <span >Mood</span>
+      <span >--></span>
+      <span id="highlight">Highlights</span>
+      <span>--></span>
+      <span>Done!</span>
+    </div>
+
+
+  <h1>Note down the good things that happenned today!</h1>
+<!--   <ion-list no-lines> -->
+
+
+    <ion-card class="card" *ngFor="let diary of diaries" (click)="editDiary(diary.key)">
+<!--       <ion-card-content> -->
+
+    <ion-item text-wrap  >
+      <ion-avatar item-end *ngIf="diary.hasimage">
+        <img [src]="diary.image"/>
+      </ion-avatar>
+      <p>{{ diary.text }}</p>
+      <button ion-button clear icon-only item-end (click)="deleteDiary(diary.key)">
+        <ion-icon class="delete" name="close"></ion-icon>
+      </button>
+    </ion-item>
+
+
+        
+ <!--      </ion-card-content> -->
+      </ion-card >
+ 
+      <button class="add" ion-button (click)="goToCreatePage()">
+        <ion-icon  icon-only item-start name="add"></ion-icon>
+      </button>
+
+<!--   </ion-list> -->
+
+      <button class="nav-button back" icon-start ion-button (click)="goToMoodPage()"><ion-icon name="arrow-back"></ion-icon>
+      Back</button>
+
+      <button class="nav-button next" icon-end *ngIf="goalComplete" ion-button (click)="complete()">DONE
+      <ion-icon name="arrow-forward"></ion-icon></button>
+
+</ion-content>

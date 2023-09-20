@@ -1,0 +1,33 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>My Diary Entry</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <!-- content: happy things today -->
+  <ion-list no-lines>
+
+
+
+
+      <p >{{diary.text}}</p>
+
+  <!-- picture -->
+
+      <img [src]="diary.image"/>
+
+      <p>Date: {{diary.year}}/{{diary.month}}/{{diary.day}}</p>
+
+  </ion-list>
+
+<!-- back,save -->
+ <ion-list no-lines>
+
+    <ion-item>
+      <button ion-button (click)="backToJournal()">Back </button>
+
+    </ion-item>
+    </ion-list>
+
+</ion-content>
